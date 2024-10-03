@@ -1,0 +1,12 @@
+{
+    "type": "module",
+    "scripts": {
+        "start": "node graphql_query.js"
+    },
+    "dependencies": {
+        "@octokit/graphql": "^8.1.1",
+        "axios": "^1.7.7",
+        "csv-writer": "^1.6.0",
+        "dotenv": "^16.4.5"
+    }
+}
