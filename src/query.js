@@ -125,12 +125,17 @@ async function main() {
     console.log(`Processing repository: ${repo.owner.login}/${repo.name}`);
     const prs = await getQualifiedPRs(repo);
     console.log(`Found ${prs.length} qualified PRs for ${repo.owner.login}/${repo.name}`);
+    let count = 0;
 
     for (const pr of prs) {
       try {
         const prData = await getPRDetails(pr);
         await csvWriter.writeRecords([prData]);
         console.log(`Processed PR #${pr.number} for ${repo.owner.login}/${repo.name}`);
+        count++;
+        if(count === 100) {
+          break;
+        }
       } catch (error) {
         console.error(`Error processing PR #${pr.number} for ${repo.owner.login}/${repo.name}:`, error);
       }
