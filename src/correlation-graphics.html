@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Repositórios</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        h2 {
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chart-container">
+        <canvas id="correlationWithStatusChart"></canvas>
+    </div>
+    <div class="chart-container">
+        <canvas id="correlationWithReviewsChart"></canvas>
+    </div>
+
+<script>
+    // Gráfico de Correlação com Status
+    const correlationWithStatusCtx = document.getElementById('correlationWithStatusChart').getContext('2d');
+    new Chart(correlationWithStatusCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Files Changed', 'Additions', 'Deletions', 'Analysis Time', 'Description Length', 'Number of Participants', 'Number of Comments'],
+            datasets: [{
+                label: 'Correlação com Status',
+                data: [-0.03199839047725217, -0.015295793251350064, -0.0490288767845799, -0.318765464046064, -0.01317531498702591, -0.14740607946216477, -0.13896163975951017],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.6)',
+                    'rgba(54, 162, 235, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(153, 102, 255, 0.6)',
+                    'rgba(255, 159, 64, 0.6)',
+                    'rgba(255, 99, 132, 0.6)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 99, 132, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+    // Gráfico de Correlação com Revisões
+    const correlationWithReviewsCtx = document.getElementById('correlationWithReviewsChart').getContext('2d');
+    new Chart(correlationWithReviewsCtx, {
+        type: 'bar',
+        data: {
+            labels: ['Files Changed', 'Additions', 'Deletions', 'Analysis Time', 'Description Length', 'Number of Participants', 'Number of Comments'],
+            datasets: [{
+                label: 'Correlação com Revisões',
+                data: [0.05001184749105775, 0.09664850220745215, 0.1047572917566429, 0.12044149424057414, 0.06774972493460826, 1, 0.7195406173220315],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.6)',
+                    'rgba(54, 162, 235, 0.6)',
+                    'rgba(255, 206, 86, 0.6)',
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(153, 102, 255, 0.6)',
+                    'rgba(255, 159, 64, 0.6)',
+                    'rgba(255, 99, 132, 0.6)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 99, 132, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
