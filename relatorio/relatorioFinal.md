@@ -54,6 +54,10 @@ Comments : Número de comentários
 
 ### A. Feedback Final das Revisões (Status do PR):
 
+#### Gráficos
+
+![Correlações de Status de PR](correlation-with-status-graphics.png)
+
 #### RQ 01. Qual a relação entre o tamanho dos PRs e o feedback final das revisões?
 
 Correlação entre quantidade de arquivos alterados e status: -0.03199839047725217
@@ -82,6 +86,10 @@ Correlação entre número de comentários e status: -0.13896163975951017
 Essas correlações negativas indicam que quanto mais interações os PRs possuem, o feedback final da revisão tende a ser ligeiramente pior. Isso pode ser devido ao fato que por conta de ocorrerem participações de diversos desenvolvedores paralelamente, pode acabar tornando algo mais complexo ou serem mais controversos, causando um feedback menos favorável.
 
 ### B. Número de Revisões:
+
+#### Gráficos
+
+![Correlações de Status de PR](correlation-with-review-graphics.png)
 
 #### RQ 05. Qual a relação entre o tamanho dos PRs e o número de revisões realizadas?
 
